@@ -1,0 +1,14 @@
+h1 {
+  color: var(--text-heading);
+  font: 700 1.75rem/normal var(--font-family-baloo);
+}
+
+legend {
+  font: var(--text-title);
+  color: var(--text-heading);
+}
+
+label {
+  font: var(--text-sm);
+  color: var(--text-body);
+}

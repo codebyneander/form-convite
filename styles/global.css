@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Configuração inicial de fontes e tamanhos de fontes */
+  --font-family-baloo: "Baloo 2", sans-serif;
+  --font-family: "Open Sans", sans-serif;
+  --text: 400 1rem/normal var(--font-family); /* Font size: 1rem = 16px*/
+  --text-sm: 400 0.875rem/normal var(--font-family); /* Font size: 0.875rem = 14px */
+  --text-title: 700 1.125rem/1.111 var(--font-family-baloo); /* Font size: 1.125rem = 18px */
+ 
+  /* Configuração de Cores */
+  --text-heading: #F9F9F9;
+  --text-body: #C8CDD0;
+
+  --input-base: #1c1f21;
+  --input-stroke: #363B40;
+  --input-placeholder: #869198;
+
+  --shape-background: #131516;
+  --shape-body: #212427;
+  --shape-button: #2D3136;
+  --shape-hover: #383D42;
+
+  /* Tabelinha de cores */
+  --color-danger: #FF5959;
+  --color-purple: #B259FF;
+  --color-fuschia: #FF59F9;
+  --color-pink: #FF598B;
+  --color-orange: #FF8B59;
+  --color-yellow: #FFCD59;
+  --color-lime: #E1FF59;
+  --color-green: #59FF91;
+  --color-cyan: #59FFF9;
+  --color-navy: #6A59FF;
+
+  /* Brand */
+  --brand-light: #59B2FF;
+  --brand-mid: #3487CF;
+  --brand-dark: #1D6FB6;
+
+}
+
+body {
+  font: var(--text);
+  color: var(--text-body);
+  background-color: var(--shape-body);
+  overflow: hidden;
+}
+
