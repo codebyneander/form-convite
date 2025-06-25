@@ -1,9 +1,10 @@
 h1 {
   color: var(--text-heading);
   font: 700 1.75rem/normal var(--font-family-baloo);
+  margin-bottom: 2.5rem; /* 40px */
 }
 
-legend {
+legend span {
   font: var(--text-title);
   color: var(--text-heading);
 }
