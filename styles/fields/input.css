@@ -30,3 +30,24 @@ input[type="datetime-local"] {
   }
   text-transform: uppercase;
 }
+
+input {
+  &:invalid {
+    border: 0.125rem solid var(--color-danger);
+  }
+
+  &[required] + .error {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+
+    font: 400 .75rem/normal var(--font-family);
+    color: var(--color-danger);
+
+    margin-top: .5rem;
+  }
+
+  &:valid + .error {
+    display: none;
+  }
+}

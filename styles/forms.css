@@ -48,7 +48,7 @@ fieldset {
   font-size: 0.875rem;
   border-radius: 6px; /* Bordas arredondadas para o efeito de pílula */
   cursor: pointer;
-  transition: all 0.3s ease-in-out; /* Animação suave na troca */
+  transition: all 0.2s ease-in-out; /* Esta é a transição principal para a maioria das propriedades */
   
   /* Alinha o ícone e o texto */
   display: flex;
