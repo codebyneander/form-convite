@@ -1,7 +1,6 @@
 h1 {
   color: var(--text-heading);
   font: 700 1.75rem/normal var(--font-family-baloo);
-  margin-bottom: 2.5rem; /* 40px */
 }
 
 legend span {
@@ -13,3 +12,10 @@ label {
   font: var(--text-sm);
   color: var(--text-body);
 }
+
+.input-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+

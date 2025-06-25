@@ -1,0 +1,71 @@
+@import url(fields/index.css);
+
+form {
+  margin-top: 2.5rem; 
+}
+
+fieldset {
+  border: none;
+
+  display: grid;
+  gap: 1rem; /* espaçamento entre os campos */
+
+  & legend {
+    margin-bottom: 1.5rem; /* espaçamento abaixo do título */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* espaçamento entre o ícone e o texto */
+  }
+
+}
+
+/* ======================================== */
+/* ESTILO DO CONTROLE SEGMENTADO       */
+/* ======================================== */
+
+/* O contêiner principal do nosso componente */
+.segmented-control {
+  display: flex; /* Alinha os botões lado a lado */
+  background-color: var(--input-base); /* Cor de fundo do contêiner */
+  border: 1px solid var(--input-stroke); /* Borda do contêiner */
+  border-radius: 8px; /* Bordas arredondadas no contêiner */
+  padding: 0.375rem;
+
+}
+
+/* Esconde os botões de rádio originais, pois vamos usar as labels */
+.segmented-control input[type="radio"] {
+  display: none;
+}
+
+/* Estilo para as labels que servirão como botões */
+.segmented-control .button {
+  margin-bottom: 0; /* Destrói o margin-bottom que estava embaixo */
+  flex: 1; /* Faz com que cada botão ocupe metade do espaço */
+  padding: 8px 12px;
+  text-align: center;
+  color: var(--text-body); /* Cor do texto padrão (não selecionado) */
+  font-size: 0.875rem;
+  border-radius: 6px; /* Bordas arredondadas para o efeito de pílula */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Animação suave na troca */
+  
+  /* Alinha o ícone e o texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espaço entre o ícone e o texto */
+}
+
+/* O truque principal: estiliza a label que vem DEPOIS de um input marcado */
+.segmented-control input[type="radio"]:checked + .button {
+  background-color: var(--shape-button); /* Cor de fundo do botão ATIVO */
+  color: var(--text-heading); /* Cor do texto do botão ATIVO */
+  font-weight: 500;
+
+      & svg path {
+      stroke: var(--brand-light); /* Ícone destacado no hover */
+    }
+}
+
+
