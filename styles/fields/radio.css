@@ -1,0 +1,108 @@
+/* Fieldset Personal */
+
+.textarea-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+/* Esconde o input de rádio padrão */
+.hidden-radio {
+    display: none; /* Ou position: absolute; opacity: 0; pointer-events: none; para acessibilidade */
+}
+
+/* Estilo para a opção de cor (o label que contém a imagem) */
+.color-option {
+    display: flex; /* Para alinhar a imagem e o indicador se quiser */
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid transparent; /* Borda inicial invisível */
+    border-radius: 50%; /* Se você quiser que o contorno da opção também seja circular */
+    cursor: pointer;
+    position: relative; /* Necessário para posicionar o indicador */
+    overflow: hidden; /* Garante que o indicador não saia do label */
+    transition: all 0.2s ease-in-out; /* Esta é a transição principal para a maioria das propriedades */
+}
+
+.color-option:hover {
+    border-color: var(--brand-light); /* Exemplo de borda ao passar o mouse */
+}
+
+.color-option img {
+    max-width: 100%; /* Garante que a imagem se ajuste ao container */
+    height: auto;
+    display: block; /* Remove espaço extra abaixo da imagem */
+    /* Se a imagem for a cor sólida que você quer, você não precisará do selection-indicator */
+    /* Caso contrário, a imagem pode ser um ícone ou algo mais */
+}
+
+/* Estilo para o círculo azul que aparece quando selecionado */
+.selection-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* Começa escondido e pequeno */
+    width: 30px; /* Tamanho do círculo azul */
+    height: 30px; /* Tamanho do círculo azul */
+    background-color: var(--brand-light); /* Cor azul do círculo */
+    border-radius: 50%;
+    opacity: 0; /* Começa invisível */
+    pointer-events: none; /* Garante que não interfira no clique do label */
+}
+
+/* Quando o rádio é checado, estilizamos o label e o indicador */
+.hidden-radio:checked + .color-option {
+    border-color: var(--brand-light); /* Borda azul ao redor da opção selecionada */
+}
+
+/* Estilos para o container geral, se houver múltiplos */
+.select-color-wrapper {
+    display: inline-block; /* Ou flex, dependendo do layout desejado */
+    flex: 1;
+}
+
+
+/* Tema do evento */
+
+
+
+label + .theme-wrapper {
+  margin-top: 1rem;
+}
+
+.theme-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.875rem, 1fr));
+  gap: .5rem;
+  margin-bottom: 1.75rem;
+}
+
+
+
+.radio-inner {
+  border: 1px solid var(--input-stroke);
+  border-radius: .5rem;
+  display: grid;
+  justify-items: center;
+  gap: .5rem;
+  font: var(--text-sm);
+
+  padding: .25rem;
+
+  position: relative;
+  & input,
+  & input:focus,
+  & input:hover {
+    all: unset;
+    position: absolute;
+    inset: 0;
+  }
+
+  &:hover, &:focus-within {
+    background-color: var(--shape-hover);
+    border: 2px solid var(--brand-light);
+
+    transition: all 0.2s ease-in-out; /* Esta é a transição principal para a maioria das propriedades */
+  }
+
+}

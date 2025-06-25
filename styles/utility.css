@@ -19,3 +19,7 @@ label {
   gap: 1rem;
 }
 
+.display-flex {
+  display: flex;
+  margin-top: -10px;
+}
