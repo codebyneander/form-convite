@@ -64,8 +64,6 @@
 
 /* Tema do evento */
 
-
-
 label + .theme-wrapper {
   margin-top: 1rem;
 }
@@ -77,19 +75,28 @@ label + .theme-wrapper {
   margin-bottom: 1.75rem;
 }
 
-
-
 .radio-inner {
+  /* Mantém a borda original de 1px com sua cor */
   border: 1px solid var(--input-stroke);
   border-radius: .5rem;
   display: grid;
   justify-items: center;
   gap: .5rem;
   font: var(--text-sm);
-
   padding: .25rem;
-
   position: relative;
+
+  /* Adiciona uma box-shadow transparente inicial.
+     Isso é crucial para que a box-shadow azul possa transicionar suavemente de "nada".
+     inset: para que a sombra fique dentro do elemento.
+     0 0 0 0: sem offset, sem blur, sem spread (inicialmente).
+     transparent: a cor inicial da sombra é transparente.
+  */
+  box-shadow: inset 0 0 0 0 transparent;
+
+  /* A transição principal para todas as propriedades (incluindo border-color e box-shadow) */
+  transition: all 0.2s ease-in-out;
+
   & input,
   & input:focus,
   & input:hover {
@@ -99,10 +106,24 @@ label + .theme-wrapper {
   }
 
   &:hover, &:focus-within {
+    /* Mantém a cor de fundo que aparece no hover/focus */
     background-color: var(--shape-hover);
-    border: 2px solid var(--brand-light);
 
-    transition: all 0.2s ease-in-out; /* Esta é a transição principal para a maioria das propriedades */
+    /* Faz a borda original de 1px ficar transparente suavemente. */
+    /* Ela não sumirá "do nada", mas transicionará a cor. */
+    border-color: transparent;
+
+    /* A nova "borda" azul de 2px via box-shadow.
+       inset: para dentro.
+       0 0: sem offset x e y.
+       0: sem blur.
+       2px: o spread (espalhamento) da sombra, que cria o efeito de borda.
+       var(--brand-light): a cor azul da sua "borda".
+    */
+    box-shadow: inset 0 0 0 2px var(--brand-light);
+
+    /* Removemos as propriedades de outline que causavam o problema de transição */
+    /* outline: 2px solid var(--brand-light); */
+    /* outline-offset: -1px; */
   }
-
 }
