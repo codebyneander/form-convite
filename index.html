@@ -332,7 +332,28 @@
               </div>
             </div>
                        
-            <label>Teste</label>
+            <div class="upload display-flex">
+
+              <div class="flex-direction-column flex-1">
+                <label>Estilo</label>
+                <div class="dark-mode display-flex">
+                  <img src="assets/icons/switch-toggle.svg" alt="On/off icon">
+                  <span>Escuro</span>
+                </div>
+              </div>
+
+              <div class="cover-photo flex-direction-column flex-2">
+                  <label>Foto de capa</label>
+                    <div class="arquivo display-flex">
+                      <label for="file-upload" class="send-file-button">
+                        <img src="assets/icons/upload.svg" alt="icone de upload">
+                          <span>Selecionar</span>
+                      </label>
+                      <input type="file" id="file-upload" style="display: none;"> <label id="file-name-display">Nenhum arquivo selecionado</label>
+                    </div>
+              </div>
+
+            </div>
 
           </fieldset>
         </form>

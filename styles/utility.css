@@ -21,5 +21,16 @@ label {
 
 .display-flex {
   display: flex;
-  margin-top: -10px;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2.5;
 }

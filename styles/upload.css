@@ -1,0 +1,67 @@
+/* Seu CSS anterior, com a correção no .upload */
+
+.upload {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    /* * CORREÇÃO AQUI:
+     * Alinha os itens filhos (as duas colunas: "Estilo" e "Foto de capa") 
+     * pelo topo do container flex.
+     */
+    align-items: flex-start; 
+    justify-content: space-between; /* Para manter a distribuição horizontal */
+}
+
+.flex-direction-column {
+    display: flex;
+    flex-direction: column;
+    /* Adicionar um align-items: flex-start; aqui pode ajudar a garantir que o conteúdo interno
+       de cada coluna comece sempre alinhado à esquerda, se ainda não estiver. */
+    /* align-items: flex-start; */ 
+}
+
+/* O restante do seu CSS que lida com os elementos internos */
+
+.dark-mode {
+    display: flex;
+    gap: .75rem;
+    align-items: center; 
+    margin-top: 0.5rem; /* Mantém um pequeno espaço entre o título "Estilo" e o switch */
+}
+
+
+.arquivo {
+    display: flex;
+    align-items: center; /* Crucial para alinhar verticalmente o botão e o texto "Nenhum arquivo selecionado" */
+    gap: .75rem;
+    /* Adicionar um margin-top aqui para afastar do LABEL "Foto de capa" */
+    margin-top: 0.5rem; /* Espaço entre "Foto de capa" e o botão/texto */
+
+    & span {
+      font: var(--text-sm);
+      font-weight: 600;
+      color: var(--text-heading);
+    }
+}
+
+.send-file-button {
+    background-color: var(--shape-button);
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.send-file-button:hover {
+    background-color: var(--shape-button-hover, #4a4f54);
+}
+
+.arquivo > label:not(.send-file-button) { 
+    color: var(--input-placeholder);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
