@@ -1,0 +1,72 @@
+#app {
+  /* Define um layout grid para o elemento com o id #app. */
+  display: grid;
+  /* Cria duas colunas: a primeira ocupa 32.26%, o gap 1.61% e a segunda 66.13% da largura */
+  grid-template-columns: 32.26% 67.74%;
+
+  /* Define um fundo diferente da cor das duas colunas */
+  background-color: var(--shape-background);
+
+  /* Faz o grid ocupar toda a altura da janela */
+  height: 100vh;
+
+  /* Esconde qualquer conteúdo que ultrupasse os limites do grid */
+  overflow: hidden;
+}
+
+main {
+  /* Permita rolagem caso o conteúdo ultrapasse o tamanho do Main. */
+  overflow: auto;
+
+  /* Haja diferenciação entre a cor de fundo da página e a cor de fundo do main */
+  background-color: var(--shape-body);
+  margin: 1.25rem 1.25rem 1.25rem 0;
+  border-radius: 12px;
+
+  /* Adicione espaçamento interno de 80px no eixo Y e 130px no eixo X em rem */
+  padding: 5rem 8.125rem;
+
+  & .main-container {
+    /* Limite a largura máxima do conteúdo principal a 35rem */
+    max-width: 35rem;
+
+    /* Alinhe o conteúdo ao centro dentro do main */
+    margin: 0 auto;
+
+    /* Haja arredondamento de borda no main de 12px em REM */
+    border-radius: 0.75rem;
+  }
+}
+
+aside {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+
+  & .aside-container {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    flex: 1;
+    width: 100%;
+
+    & .background {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    & .branding {
+      position: absolute;
+      top: 2rem;     /* ajuste conforme necessário */
+      left: 2rem;    /* ajuste conforme necessário */
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem; /* espaçamento entre os textos */
+    }
+  }
+}
